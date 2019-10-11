@@ -1,21 +1,21 @@
 package br.com.alura.forum.controller;
 
+import br.com.alura.forum.dto.TopicoDto;
 import br.com.alura.forum.entity.Curso;
 import br.com.alura.forum.entity.Topico;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.RestController;
 
 import java.util.Arrays;
 import java.util.List;
 
-@Controller
+@RestController
 public class TopicosController {
 
-    @RequestMapping("/toṕicos")
-    @ResponseBody
-    public List<Topico> lista() {
+    @RequestMapping("/topicos")
+    public List<TopicoDto> lista() {
         Topico topico = new Topico("Duvida", "Duvida com Spring", new Curso("Spring", "Programação"));
-        return Arrays.asList(topico, topico, topico);
+        return TopicoDto.converter(Arrays.asList(topico, topico, topico));
     }
 }
