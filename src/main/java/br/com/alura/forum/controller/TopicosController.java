@@ -50,6 +50,6 @@ public class TopicosController {
     @GetMapping("/{id}")
     public DetalhesDoTopicoDto detalhar(@PathVariable Long id) {
         Topico topico = topicoRepository.getOne(id);
-        return new DetalhesDoTopicoDto();
+        return new DetalhesDoTopicoDto(topico);
     }
 }
