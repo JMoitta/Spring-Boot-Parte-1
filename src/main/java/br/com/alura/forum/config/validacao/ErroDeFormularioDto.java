@@ -1,4 +1,4 @@
-package br.com.alura.forum.controller.dto.config.validacao;
+package br.com.alura.forum.config.validacao;
 
 public class ErroDeFormularioDto {
     private String campo;
